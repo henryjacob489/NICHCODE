@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnosis Result — DYNAMIC AGRO AI</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="/" class="nav-brand">🌱 <span>DYNAMIC AGRO AI</span></a>
+
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="/" class="nav-btn">Home</a>
+            <a href="/library" class="nav-btn">Crop Pest &amp; Disease</a>
+            <a href="/dealers" class="nav-btn">Agro-Dealers</a>
+            <a href="/farmer-signup" class="nav-btn outline">Farmer Sign Up</a>
+            <a href="/dealer-signup" class="nav-btn solid">Dealer Sign Up</a>
+        </div>
+    </div>
+</nav>
+
+<!-- RESULT CONTENT -->
+<section class="page active">
+    <h2 class="page-title">Diagnosis Result</h2>
+    <p class="page-sub">What our AI found in your crop image</p>
+
+    <div class="card result-card">
+        <div class="result-header">
+            <div class="result-icon" id="resultIcon">⚠️</div>
+            <div>
+                <h3 id="issueName">—</h3>
+                <p class="result-crop">Detected on: <span id="detectedCrop">—</span></p>
+            </div>
+        </div>
+
+        <div class="result-grid">
+            <div class="result-item">
+                <span class="result-label">Affected Part</span>
+                <span class="result-value" id="affectedPart">—</span>
+            </div>
+            <div class="result-item">
+                <span class="result-label">Confidence</span>
+                <span class="result-value" id="confidenceLevel">—</span>
+            </div>
+            <div class="result-item">
+                <span class="result-label">Severity</span>
+                <span class="result-value" id="severity">—</span>
+            </div>
+            <div class="result-item">
+                <span class="result-label">Treatment Type</span>
+                <span class="result-value" id="treatmentType">—</span>
+            </div>
+        </div>
+
+        <div class="action-panel">
+            <h4>✅ Recommended Action</h4>
+            <p id="actionText">—</p>
+        </div>
+
+        <div class="result-buttons">
+            <a href="/dealers" class="primary-btn">📍 Find Nearby Dealers</a>
+            <a href="/scan" class="secondary-btn">🔄 Scan Another</a>
+        </div>
+    </div>
+
+    <div class="card cta-card">
+        <h3>Want to learn more?</h3>
+        <p>Browse the pest and disease library for detailed information.</p>
+        <a href="/library" class="secondary-btn">Open Library</a>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>DYNAMIC AGRO  AI © 2026 Empowering Nigerian farmers with intelligent crop diagnosis</p>
+</footer>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
