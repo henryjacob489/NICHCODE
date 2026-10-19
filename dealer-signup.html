@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dealer Sign Up — DYNAMIC AGRO AI</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="/" class="nav-brand">🌱 <span>DYNAMIC AGRO AI</span></a>
+
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="/" class="nav-btn">Home</a>
+            <a href="/library" class="nav-btn">Crop Pest &amp; Disease</a>
+            <a href="/dealers" class="nav-btn">Agro-Dealers</a>
+            <a href="/farmer-signup" class="nav-btn outline">Farmer Sign Up</a>
+            <a href="/dealer-signup" class="nav-btn solid active">Dealer Sign Up</a>
+        </div>
+    </div>
+</nav>
+
+<!-- DEALER SIGNUP CONTENT -->
+<section class="page active">
+    <h2 class="page-title">Dealer Sign Up</h2>
+    <p class="page-sub">List your agro-store and get discovered by farmers near you</p>
+
+    <div class="card">
+        <form id="dealerForm" onsubmit="registerDealer(event)">
+            <div class="form-group">
+                <label>Store Name *</label>
+                <input type="text" id="storeName" required>
+            </div>
+
+            <div class="form-group">
+                <label>Owner Name *</label>
+                <input type="text" id="ownerName" required>
+            </div>
+
+            <div class="form-group">
+                <label>Phone Number *</label>
+                <input type="tel" id="dealerPhone" required>
+            </div>
+
+            <div class="form-group">
+                <label>State *</label>
+                <select id="dealerState" required>
+                    <option value="">Select State</option>
+                    <option>Abia</option><option>Adamawa</option><option>Akwa Ibom</option>
+                    <option>Anambra</option><option>Bauchi</option><option>Bayelsa</option>
+                    <option>Benue</option><option>Borno</option><option>Cross River</option>
+                    <option>Delta</option><option>Ebonyi</option><option>Edo</option>
+                    <option>Ekiti</option><option>Enugu</option><option>FCT</option>
+                    <option>Gombe</option><option>Imo</option><option>Jigawa</option>
+                    <option>Kaduna</option><option>Kano</option><option>Katsina</option>
+                    <option>Kebbi</option><option>Kogi</option><option>Kwara</option>
+                    <option>Lagos</option><option>Nasarawa</option><option>Niger</option>
+                    <option>Ogun</option><option>Ondo</option><option>Osun</option>
+                    <option>Oyo</option><option>Plateau</option><option>Rivers</option>
+                    <option>Sokoto</option><option>Taraba</option><option>Yobe</option>
+                    <option>Zamfara</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>LGA / Town *</label>
+                <input type="text" id="dealerLGA" required>
+            </div>
+
+            <div class="form-group">
+                <label>GPS Coordinates (optional)</label>
+                <button type="button" class="small-btn" onclick="getLocation()">
+                    📍 Use My Current Location
+                </button>
+                <input type="text" id="dealerGPS" readonly placeholder="Not set">
+            </div>
+
+            <div class="form-group">
+                <label>Product Categories *</label>
+                <div class="checkbox-grid">
+                    <label><input type="checkbox" value="Insecticide"> Insecticide</label>
+                    <label><input type="checkbox" value="Fungicide"> Fungicide</label>
+                    <label><input type="checkbox" value="Herbicide"> Herbicide</label>
+                    <label><input type="checkbox" value="Bactericide"> Bactericide</label>
+                    <label><input type="checkbox" value="Virucide"> Virucide</label>
+                    <label><input type="checkbox" value="Nematicide"> Nematicide</label>
+                    <label><input type="checkbox" value="Acaricide"> Acaricide</label>
+                    <label><input type="checkbox" value="Fertilizer"> Fertilizer</label>
+                    <label><input type="checkbox" value="Seeds"> Seeds</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Operating Hours</label>
+                <input type="text" id="dealerHours" placeholder="e.g. Mon-Sat, 8am-6pm">
+            </div>
+
+            <div class="form-group">
+                <label>CAC Registration Number (optional)</label>
+                <input type="text" id="dealerCAC" placeholder="For verified badge">
+            </div>
+
+            <button type="submit" class="primary-btn">✅ Register Store</button>
+        </form>
+
+        <div id="dealerSuccess" class="success-message" style="display:none;">
+            <h3>🎉 Store Registered!</h3>
+            <p>Your store is now visible to farmers in your area.</p>
+            <a href="/dealers" class="primary-btn">View All Dealers</a>
+        </div>
+    </div>
+
+    <div class="card cta-card">
+        <h3>Not a dealer?</h3>
+        <p>Sign up as a farmer to get AI crop diagnosis.</p>
+        <a href="/farmer-signup" class="secondary-btn">Switch to Farmer Sign Up</a>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>DYNAMIC AGRO AI © 2026 — Augmenting AI Competition Entry</p>
+    <p class="footer-sub">Empowering Nigerian farmers with intelligent crop diagnosis</p>
+</footer>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
