@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro-Dealers — DYNAMIC AGRO AI</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="/" class="nav-brand">🌱 <span>DYNAMIC AGRO AI</span></a>
+
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="/" class="nav-btn">Home</a>
+            <a href="/library" class="nav-btn">Crop Pest &amp; Disease</a>
+            <a href="/dealers" class="nav-btn active">Agro-Dealers</a>
+            <a href="/farmer-signup" class="nav-btn outline">Farmer Sign Up</a>
+            <a href="/dealer-signup" class="nav-btn solid">Dealer Sign Up</a>
+        </div>
+    </div>
+</nav>
+
+<!-- DEALERS CONTENT -->
+<section class="page active">
+    <h2 class="page-title">Agro-Dealers Near You</h2>
+    <p class="page-sub">Registered dealers who stock crop-protection products</p>
+
+    <div class="card filter-card">
+        <label class="field-label">Filter by Product Category</label>
+        <select id="dealerFilter" class="dropdown" onchange="filterDealers()">
+            <option value="all">All Products</option>
+            <option value="Insecticide">Insecticide</option>
+            <option value="Fungicide">Fungicide</option>
+            <option value="Herbicide">Herbicide</option>
+            <option value="Bactericide">Bactericide</option>
+            <option value="Virucide">Virucide</option>
+            <option value="Nematicide">Nematicide</option>
+            <option value="Acaricide">Acaricide</option>
+        </select>
+    </div>
+
+    <div id="dealerList" class="dealer-list">
+        <!-- JS fills -->
+    </div>
+
+    <div class="card cta-card">
+        <h3>Own an agro-store?</h3>
+        <p>Register your store and get discovered by farmers nearby.</p>
+        <a href="/dealer-signup" class="primary-btn">🏪 Register Your Store</a>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>DYNAMIC AGRO AI © 2026 — Augmenting AI Competition Entry</p>
+    <p class="footer-sub">Empowering Nigerian farmers with intelligent crop diagnosis</p>
+</footer>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
