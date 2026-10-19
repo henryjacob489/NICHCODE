@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Pest & Disease — DYNAMIC AGRO AI</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- ============================================================
+     NAVBAR (identical, but "Crop Pest & Disease" is active)
+     ============================================================ -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="/" class="nav-brand">🌱 <span>DYNAMIC AGRO AI</span></a>
+
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="/" class="nav-btn">Home</a>
+            <a href="/library" class="nav-btn active">Crop Pest &amp; Disease</a>
+            <a href="/dealers" class="nav-btn">Agro-Dealers</a>
+            <a href="/farmer-signup" class="nav-btn outline">Farmer Sign Up</a>
+            <a href="/dealer-signup" class="nav-btn solid">Dealer Sign Up</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ============================================================
+     LIBRARY CONTENT
+     ============================================================ -->
+<section class="page active">
+    <h2 class="page-title">Crop Pest &amp; Disease Library</h2>
+    <p class="page-sub">Browse common pests and diseases by crop</p>
+
+    <!-- Search bar -->
+    <div class="card search-card">
+        <input
+            type="text"
+            id="librarySearch"
+            class="search-input"
+            placeholder="🔍 Search by crop, pest, or symptom..."
+            oninput="filterLibrary()"
+        >
+    </div>
+
+    <!-- Crop tabs -->
+    <div class="crop-tabs" id="cropTabs">
+        <button class="crop-tab active" data-crop="all" onclick="selectCropTab('all')">All</button>
+        <button class="crop-tab" data-crop="maize" onclick="selectCropTab('maize')">🌽 Maize</button>
+        <button class="crop-tab" data-crop="cassava" onclick="selectCropTab('cassava')">🍠 Cassava</button>
+        <button class="crop-tab" data-crop="rice" onclick="selectCropTab('rice')">🌾 Rice</button>
+        <button class="crop-tab" data-crop="tomato" onclick="selectCropTab('tomato')">🍅 Tomato</button>
+        <button class="crop-tab" data-crop="yam" onclick="selectCropTab('yam')">🍠 Yam</button>
+        <button class="crop-tab" data-crop="pepper" onclick="selectCropTab('pepper')">🌶️ Pepper</button>
+    </div>
+
+    <!-- Entries -->
+    <div id="libraryGrid" class="library-grid">
+        <!-- JS fills -->
+    </div>
+</section>
+
+<footer class="footer">
+    <p>DYNAMIC AGRO AI © 2026 — Augmenting AI Competition Entry</p>
+    <p class="footer-sub">Empowering Nigerian farmers with intelligent crop diagnosis</p>
+</footer>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
