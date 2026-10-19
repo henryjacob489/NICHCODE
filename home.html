@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DYNAMIC AGRO AI — Home</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- ============================================================
+     NAVBAR (same on every page)
+     ============================================================ -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="/" class="nav-brand">🌱 <span>DYNAMIC AGRO AI</span></a>
+
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="/" class="nav-btn active">Home</a>
+            <a href="/library" class="nav-btn">Crop Pest &amp; Disease</a>
+            <a href="/dealers" class="nav-btn">Agro-Dealers</a>
+            <a href="/farmer-signup" class="nav-btn outline">Farmer Sign Up</a>
+            <a href="/dealer-signup" class="nav-btn solid">Dealer Sign Up</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ============================================================
+     HOME CONTENT
+     ============================================================ -->
+<section class="page active">
+
+    <!-- Welcome banner -->
+    <div class="welcome-banner">
+        <div class="welcome-text">
+            <h1>Welcome, Farmer 👋</h1>
+            <p>Scan your crops, chat with our AI, and find agro-dealers near you.</p>
+        </div>
+        <div class="welcome-status">
+            <span class="status-dot"></span>
+            AI Online
+        </div>
+    </div>
+
+    <!-- AI Chat box -->
+    <div class="card chat-card">
+        <div class="chat-header">
+            <div class="chat-header-left">
+                <span class="chat-avatar">🤖</span>
+                <div>
+                    <h3>DYNAMIC AGRO Assistant</h3>
+                    <p class="chat-status">Ready to analyze your crops</p>
+                </div>
+            </div>
+            <button class="chat-clear" onclick="clearChat()" title="Clear chat">🗑️</button>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+            <div class="chat-msg bot">
+                <div class="msg-avatar">🤖</div>
+                <div class="msg-bubble">
+                    Hello! I'm your crop assistant. Upload a photo of your maize,
+                    cassava, rice, tomato, yam, or pepper, and I'll diagnose any
+                    disease or pest I see. You can also type a question below.
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-image-preview" id="chatImagePreview" style="display:none;">
+            <img id="chatPreviewImg" alt="Preview">
+            <button class="remove-img" onclick="removeChatImage()">✕</button>
+        </div>
+
+        <div class="chat-input-area">
+            <button class="chat-attach" onclick="document.getElementById('chatImageInput').click()" title="Attach image">
+                📎
+            </button>
+            <input type="file" id="chatImageInput" accept="image/*" hidden onchange="handleChatImage(event)">
+            <input
+                type="text"
+                id="chatTextInput"
+                class="chat-text-input"
+                placeholder="Type a message or attach a crop photo..."
+                onkeypress="if(event.key==='Enter') sendChatMessage()"
+            >
+            <button class="chat-send" onclick="sendChatMessage()" title="Send">➤</button>
+        </div>
+    </div>
+
+    <!-- Nearby dealers preview -->
+    <div class="card dealers-preview-card">
+        <div class="section-header">
+            <h2>📍 Agro-Dealers Near You</h2>
+            <a href="/dealers" class="link-btn">View All →</a>
+        </div>
+        <div class="dealers-scroll" id="homeDealerList">
+            <!-- JS fills this -->
+        </div>
+    </div>
+
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+    <p>DYNAMIC AGRO AI © 2026 — Augmenting AI Competition Entry</p>
+    <p class="footer-sub">Empowering Nigerian farmers with intelligent crop diagnosis</p>
+</footer>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
