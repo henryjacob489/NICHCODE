@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan Crop — DYNAMIC AGRO AI</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="/" class="nav-brand">🌱 <span>DYNAMIC AGRO  AI</span></a>
+
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="/" class="nav-btn">Home</a>
+            <a href="/library" class="nav-btn">Crop Pest &amp; Disease</a>
+            <a href="/dealers" class="nav-btn">Agro-Dealers</a>
+            <a href="/farmer-signup" class="nav-btn outline">Farmer Sign Up</a>
+            <a href="/dealer-signup" class="nav-btn solid">Dealer Sign Up</a>
+        </div>
+    </div>
+</nav>
+
+<!-- SCAN CONTENT -->
+<section class="page active">
+    <h2 class="page-title">Scan Your Crop</h2>
+    <p class="page-sub">Upload an image and get instant AI diagnosis</p>
+
+    <div class="card">
+        <label class="field-label">Select Crop Type (or Auto-Detect)</label>
+        <select id="cropSelect" class="dropdown">
+            <option value="auto">🔍 Auto-Detect</option>
+            <option value="maize">🌽 Maize</option>
+            <option value="cassava">🍠 Cassava</option>
+            <option value="rice">🌾 Rice</option>
+            <option value="tomato">🍅 Tomato</option>
+            <option value="yam">🍠 Yam</option>
+            <option value="pepper">🌶️ Pepper</option>
+        </select>
+    </div>
+
+    <div class="card">
+        <label class="field-label">Upload Crop Image</label>
+        <div class="upload-zone" id="uploadZone">
+            <input type="file" id="imageInput" accept="image/*" hidden>
+            <div class="upload-content" onclick="document.getElementById('imageInput').click()">
+                <div class="upload-icon">📁</div>
+                <p>Click to upload or drag an image here</p>
+                <p class="upload-hint">JPG, PNG — phone or drone</p>
+            </div>
+        </div>
+
+        <img id="preview" class="preview-img" alt="Preview" style="display:none;">
+
+        <button id="analyzeBtn" class="primary-btn" onclick="analyzeImage()">
+            🔬 Analyze Crop
+        </button>
+
+        <div id="loading" class="loading" style="display:none;">
+            <div class="spinner"></div>
+            <p>Analyzing your crop...</p>
+        </div>
+    </div>
+
+    <div class="card cta-card">
+        <h3>Prefer to chat?</h3>
+        <p>Use the AI assistant on the home page to upload and ask questions.</p>
+        <a href="/" class="secondary-btn">Go to Home</a>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>DYNAMIC AGRO AI © 2026 — Augmenting AI Competition Entry</p>
+    <p class="footer-sub">Empowering Nigerian farmers with intelligent crop diagnosis</p>
+</footer>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
